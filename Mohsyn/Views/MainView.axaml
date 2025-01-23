@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:AvaloniaEdit="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
              xmlns:vm="clr-namespace:Mohsyn.ViewModels"
+             xmlns:editing="using:AvaloniaEdit.Editing"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Mohsyn.Views.MainView"
              x:DataType="vm:MainViewModel">
@@ -13,10 +14,12 @@
     <vm:MainViewModel />
   </Design.DataContext>
   <StackPanel>
-    <AvaloniaEdit:TextEditor Text="Hello Avalonia Edit!"
-                           ShowLineNumbers="True"
-                           FontFamily="Cascadia Code,Consolas,Menlo,Monospace"/>
-    <Button Background="MediumAquamarine">Salam!</Button>
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <AvaloniaEdit:TextEditor Name="Editor"
+                               FontFamily="Cascadia Code,Consolas,Menlo,Monospace"
+                               HorizontalScrollBarVisibility="Auto"
+                               VerticalScrollBarVisibility="Visible"
+                               FontWeight="Light"
+                               FontSize="14" >
+    </AvaloniaEdit:TextEditor>
   </StackPanel>
 </UserControl>
